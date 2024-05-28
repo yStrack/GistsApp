@@ -10,7 +10,6 @@
 		18519EAF2C060E89004FE728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EAE2C060E89004FE728 /* AppDelegate.swift */; };
 		18519EB12C060E89004FE728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EB02C060E89004FE728 /* SceneDelegate.swift */; };
 		18519EB32C060E89004FE728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EB22C060E89004FE728 /* ViewController.swift */; };
-		18519EB62C060E89004FE728 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 18519EB52C060E89004FE728 /* Base */; };
 		18519EB82C060E8A004FE728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18519EB72C060E8A004FE728 /* Assets.xcassets */; };
 		18519EBB2C060E8A004FE728 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 18519EBA2C060E8A004FE728 /* Base */; };
 		18519EC62C060E8A004FE728 /* GistsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EC52C060E8A004FE728 /* GistsAppTests.swift */; };
@@ -40,7 +39,6 @@
 		18519EAE2C060E89004FE728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18519EB02C060E89004FE728 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		18519EB22C060E89004FE728 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		18519EB52C060E89004FE728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18519EB72C060E8A004FE728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18519EBA2C060E8A004FE728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18519EBC2C060E8A004FE728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				18519EAE2C060E89004FE728 /* AppDelegate.swift */,
 				18519EB02C060E89004FE728 /* SceneDelegate.swift */,
 				18519EB22C060E89004FE728 /* ViewController.swift */,
-				18519EB42C060E89004FE728 /* Main.storyboard */,
 				18519EB72C060E8A004FE728 /* Assets.xcassets */,
 				18519EB92C060E8A004FE728 /* LaunchScreen.storyboard */,
 				18519EBC2C060E8A004FE728 /* Info.plist */,
@@ -233,7 +230,6 @@
 			files = (
 				18519EB82C060E8A004FE728 /* Assets.xcassets in Resources */,
 				18519EBB2C060E8A004FE728 /* Base in Resources */,
-				18519EB62C060E89004FE728 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		18519EB42C060E89004FE728 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18519EB52C060E89004FE728 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		18519EB92C060E8A004FE728 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,9 +435,9 @@
 				INFOPLIST_FILE = GistsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +445,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuri.GistsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -475,9 +467,9 @@
 				INFOPLIST_FILE = GistsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,6 +477,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuri.GistsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
