@@ -12,9 +12,15 @@
 		18519EB32C060E89004FE728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EB22C060E89004FE728 /* ViewController.swift */; };
 		18519EB82C060E8A004FE728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18519EB72C060E8A004FE728 /* Assets.xcassets */; };
 		18519EBB2C060E8A004FE728 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 18519EBA2C060E8A004FE728 /* Base */; };
-		18519EC62C060E8A004FE728 /* GistsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EC52C060E8A004FE728 /* GistsAppTests.swift */; };
 		18519ED02C060E8A004FE728 /* GistsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519ECF2C060E8A004FE728 /* GistsAppUITests.swift */; };
 		18519ED22C060E8A004FE728 /* GistsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519ED12C060E8A004FE728 /* GistsAppUITestsLaunchTests.swift */; };
+		18519EE22C061278004FE728 /* GistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EE12C061278004FE728 /* GistResponse.swift */; };
+		18519EE52C0620F5004FE728 /* Endpoint+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EE42C0620F5004FE728 /* Endpoint+Protocol.swift */; };
+		18A36B182C076245005AE9C6 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B172C076245005AE9C6 /* MockURLProtocol.swift */; };
+		18A36B1A2C0765AC005AE9C6 /* GistResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */; };
+		18D676792C065BBA00C66EB5 /* GistsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */; };
+		18D6767B2C065F0000C66EB5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6767A2C065F0000C66EB5 /* NetworkService.swift */; };
+		18D6767E2C0668EC00C66EB5 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6767D2C0668EC00C66EB5 /* NetworkServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +49,16 @@
 		18519EBA2C060E8A004FE728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18519EBC2C060E8A004FE728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18519EC12C060E8A004FE728 /* GistsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		18519EC52C060E8A004FE728 /* GistsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsAppTests.swift; sourceTree = "<group>"; };
 		18519ECB2C060E8A004FE728 /* GistsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GistsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18519ECF2C060E8A004FE728 /* GistsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsAppUITests.swift; sourceTree = "<group>"; };
 		18519ED12C060E8A004FE728 /* GistsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		18519EE12C061278004FE728 /* GistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistResponse.swift; sourceTree = "<group>"; };
+		18519EE42C0620F5004FE728 /* Endpoint+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Protocol.swift"; sourceTree = "<group>"; };
+		18A36B172C076245005AE9C6 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistResponseMock.swift; sourceTree = "<group>"; };
+		18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsEndpoint.swift; sourceTree = "<group>"; };
+		18D6767A2C065F0000C66EB5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		18D6767D2C0668EC00C66EB5 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +109,7 @@
 		18519EAD2C060E89004FE728 /* GistsApp */ = {
 			isa = PBXGroup;
 			children = (
+				18519EDF2C0610F9004FE728 /* Network */,
 				18519EAE2C060E89004FE728 /* AppDelegate.swift */,
 				18519EB02C060E89004FE728 /* SceneDelegate.swift */,
 				18519EB22C060E89004FE728 /* ViewController.swift */,
@@ -110,7 +123,8 @@
 		18519EC42C060E8A004FE728 /* GistsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				18519EC52C060E8A004FE728 /* GistsAppTests.swift */,
+				18A36B162C076237005AE9C6 /* Mock */,
+				18D6767C2C0668C300C66EB5 /* NetworkTests */,
 			);
 			path = GistsAppTests;
 			sourceTree = "<group>";
@@ -122,6 +136,50 @@
 				18519ED12C060E8A004FE728 /* GistsAppUITestsLaunchTests.swift */,
 			);
 			path = GistsAppUITests;
+			sourceTree = "<group>";
+		};
+		18519EDF2C0610F9004FE728 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				18519EE32C0620E9004FE728 /* Endpoint */,
+				18519EE02C0610FF004FE728 /* ResponseModels */,
+				18D6767A2C065F0000C66EB5 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		18519EE02C0610FF004FE728 /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				18519EE12C061278004FE728 /* GistResponse.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		18519EE32C0620E9004FE728 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				18519EE42C0620F5004FE728 /* Endpoint+Protocol.swift */,
+				18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		18A36B162C076237005AE9C6 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				18A36B172C076245005AE9C6 /* MockURLProtocol.swift */,
+				18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		18D6767C2C0668C300C66EB5 /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				18D6767D2C0668EC00C66EB5 /* NetworkServiceTests.swift */,
+			);
+			path = NetworkTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18519EE52C0620F5004FE728 /* Endpoint+Protocol.swift in Sources */,
 				18519EB32C060E89004FE728 /* ViewController.swift in Sources */,
 				18519EAF2C060E89004FE728 /* AppDelegate.swift in Sources */,
 				18519EB12C060E89004FE728 /* SceneDelegate.swift in Sources */,
+				18D676792C065BBA00C66EB5 /* GistsEndpoint.swift in Sources */,
+				18519EE22C061278004FE728 /* GistResponse.swift in Sources */,
+				18D6767B2C065F0000C66EB5 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +326,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18519EC62C060E8A004FE728 /* GistsAppTests.swift in Sources */,
+				18A36B1A2C0765AC005AE9C6 /* GistResponseMock.swift in Sources */,
+				18D6767E2C0668EC00C66EB5 /* NetworkServiceTests.swift in Sources */,
+				18A36B182C076245005AE9C6 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,7 +560,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FYZHV75N6Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuri.GistsAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,7 +580,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FYZHV75N6Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuri.GistsAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -535,6 +599,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FYZHV75N6Y;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuri.GistsAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -553,6 +618,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FYZHV75N6Y;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuri.GistsAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
