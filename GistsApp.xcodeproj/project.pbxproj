@@ -16,6 +16,12 @@
 		18519ED22C060E8A004FE728 /* GistsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519ED12C060E8A004FE728 /* GistsAppUITestsLaunchTests.swift */; };
 		18519EE22C061278004FE728 /* GistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EE12C061278004FE728 /* GistResponse.swift */; };
 		18519EE52C0620F5004FE728 /* Endpoint+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EE42C0620F5004FE728 /* Endpoint+Protocol.swift */; };
+		1875FE042C07A24B00E3775D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE032C07A24B00E3775D /* File.swift */; };
+		1875FE062C07A2C100E3775D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE052C07A2C100E3775D /* User.swift */; };
+		1875FE082C07A2CF00E3775D /* Gist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE072C07A2CF00E3775D /* Gist.swift */; };
+		1875FE0A2C07A5A900E3775D /* GistsRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE092C07A5A900E3775D /* GistsRepositoryInterface.swift */; };
+		1875FE0C2C07A63800E3775D /* GistsAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE0B2C07A63800E3775D /* GistsAPIRepository.swift */; };
+		1875FE112C07C8DA00E3775D /* GistsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE102C07C8DA00E3775D /* GistsRepositoryTests.swift */; };
 		18A36B182C076245005AE9C6 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B172C076245005AE9C6 /* MockURLProtocol.swift */; };
 		18A36B1A2C0765AC005AE9C6 /* GistResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */; };
 		18D676792C065BBA00C66EB5 /* GistsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */; };
@@ -54,6 +60,12 @@
 		18519ED12C060E8A004FE728 /* GistsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		18519EE12C061278004FE728 /* GistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistResponse.swift; sourceTree = "<group>"; };
 		18519EE42C0620F5004FE728 /* Endpoint+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Protocol.swift"; sourceTree = "<group>"; };
+		1875FE032C07A24B00E3775D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		1875FE052C07A2C100E3775D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1875FE072C07A2CF00E3775D /* Gist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gist.swift; sourceTree = "<group>"; };
+		1875FE092C07A5A900E3775D /* GistsRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsRepositoryInterface.swift; sourceTree = "<group>"; };
+		1875FE0B2C07A63800E3775D /* GistsAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsAPIRepository.swift; sourceTree = "<group>"; };
+		1875FE102C07C8DA00E3775D /* GistsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsRepositoryTests.swift; sourceTree = "<group>"; };
 		18A36B172C076245005AE9C6 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistResponseMock.swift; sourceTree = "<group>"; };
 		18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsEndpoint.swift; sourceTree = "<group>"; };
@@ -109,6 +121,7 @@
 		18519EAD2C060E89004FE728 /* GistsApp */ = {
 			isa = PBXGroup;
 			children = (
+				1875FE002C07A0A600E3775D /* Domain */,
 				18519EDF2C0610F9004FE728 /* Network */,
 				18519EAE2C060E89004FE728 /* AppDelegate.swift */,
 				18519EB02C060E89004FE728 /* SceneDelegate.swift */,
@@ -123,6 +136,7 @@
 		18519EC42C060E8A004FE728 /* GistsAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				1875FE0D2C07C8AD00E3775D /* DomainTests */,
 				18A36B162C076237005AE9C6 /* Mock */,
 				18D6767C2C0668C300C66EB5 /* NetworkTests */,
 			);
@@ -163,6 +177,42 @@
 				18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */,
 			);
 			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		1875FE002C07A0A600E3775D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1875FE012C07A0AE00E3775D /* Entities */,
+				1875FE022C07A0CA00E3775D /* Repositories */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		1875FE012C07A0AE00E3775D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				1875FE072C07A2CF00E3775D /* Gist.swift */,
+				1875FE052C07A2C100E3775D /* User.swift */,
+				1875FE032C07A24B00E3775D /* File.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		1875FE022C07A0CA00E3775D /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1875FE092C07A5A900E3775D /* GistsRepositoryInterface.swift */,
+				1875FE0B2C07A63800E3775D /* GistsAPIRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1875FE0D2C07C8AD00E3775D /* DomainTests */ = {
+			isa = PBXGroup;
+			children = (
+				1875FE102C07C8DA00E3775D /* GistsRepositoryTests.swift */,
+			);
+			path = DomainTests;
 			sourceTree = "<group>";
 		};
 		18A36B162C076237005AE9C6 /* Mock */ = {
@@ -312,12 +362,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1875FE082C07A2CF00E3775D /* Gist.swift in Sources */,
 				18519EE52C0620F5004FE728 /* Endpoint+Protocol.swift in Sources */,
 				18519EB32C060E89004FE728 /* ViewController.swift in Sources */,
+				1875FE0C2C07A63800E3775D /* GistsAPIRepository.swift in Sources */,
 				18519EAF2C060E89004FE728 /* AppDelegate.swift in Sources */,
 				18519EB12C060E89004FE728 /* SceneDelegate.swift in Sources */,
 				18D676792C065BBA00C66EB5 /* GistsEndpoint.swift in Sources */,
+				1875FE062C07A2C100E3775D /* User.swift in Sources */,
+				1875FE042C07A24B00E3775D /* File.swift in Sources */,
 				18519EE22C061278004FE728 /* GistResponse.swift in Sources */,
+				1875FE0A2C07A5A900E3775D /* GistsRepositoryInterface.swift in Sources */,
 				18D6767B2C065F0000C66EB5 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +383,7 @@
 			files = (
 				18A36B1A2C0765AC005AE9C6 /* GistResponseMock.swift in Sources */,
 				18D6767E2C0668EC00C66EB5 /* NetworkServiceTests.swift in Sources */,
+				1875FE112C07C8DA00E3775D /* GistsRepositoryTests.swift in Sources */,
 				18A36B182C076245005AE9C6 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

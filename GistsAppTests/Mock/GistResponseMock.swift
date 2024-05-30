@@ -59,4 +59,37 @@ fileprivate let jsonString = """
     ]
 """
 
+fileprivate let missingOwnerJSON = """
+    [
+      {
+        "url": "https://api.github.com/gists/aa5a315d61ae9438b18d",
+        "forks_url": "https://api.github.com/gists/aa5a315d61ae9438b18d/forks",
+        "commits_url": "https://api.github.com/gists/aa5a315d61ae9438b18d/commits",
+        "id": "aa5a315d61ae9438b18d",
+        "node_id": "MDQ6R2lzdGFhNWEzMTVkNjFhZTk0MzhiMThk",
+        "git_pull_url": "https://gist.github.com/aa5a315d61ae9438b18d.git",
+        "git_push_url": "https://gist.github.com/aa5a315d61ae9438b18d.git",
+        "html_url": "https://gist.github.com/aa5a315d61ae9438b18d",
+        "files": {
+          "hello_world.rb": {
+            "filename": "hello_world.rb",
+            "type": "application/x-ruby",
+            "language": "Ruby",
+            "raw_url": "https://gist.githubusercontent.com/octocat/6cad326836d38bd3a7ae/raw/db9c55113504e46fa076e7df3a04ce592e2e86d8/hello_world.rb",
+            "size": 167
+          }
+        },
+        "public": true,
+        "created_at": "2010-04-14T02:15:15Z",
+        "updated_at": "2011-06-20T11:34:15Z",
+        "description": "Hello World Examples",
+        "comments": 0,
+        "user": null,
+        "comments_url": "https://api.github.com/gists/aa5a315d61ae9438b18d/comments/",
+        "truncated": false
+      }
+    ]
+"""
+
 public let gistResponseMockData = jsonString.data(using: .utf8)
+public let gistResponseMissingOwnerMockData = missingOwnerJSON.data(using: .utf8)
