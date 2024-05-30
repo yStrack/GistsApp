@@ -22,6 +22,7 @@
 		1875FE0A2C07A5A900E3775D /* GistsRepositoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE092C07A5A900E3775D /* GistsRepositoryInterface.swift */; };
 		1875FE0C2C07A63800E3775D /* GistsAPIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE0B2C07A63800E3775D /* GistsAPIRepository.swift */; };
 		1875FE112C07C8DA00E3775D /* GistsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE102C07C8DA00E3775D /* GistsRepositoryTests.swift */; };
+		1875FE132C0897B500E3775D /* XCTest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE122C0897B500E3775D /* XCTest+Extension.swift */; };
 		18A36B182C076245005AE9C6 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B172C076245005AE9C6 /* MockURLProtocol.swift */; };
 		18A36B1A2C0765AC005AE9C6 /* GistResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */; };
 		18D676792C065BBA00C66EB5 /* GistsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */; };
@@ -66,6 +67,7 @@
 		1875FE092C07A5A900E3775D /* GistsRepositoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsRepositoryInterface.swift; sourceTree = "<group>"; };
 		1875FE0B2C07A63800E3775D /* GistsAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsAPIRepository.swift; sourceTree = "<group>"; };
 		1875FE102C07C8DA00E3775D /* GistsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsRepositoryTests.swift; sourceTree = "<group>"; };
+		1875FE122C0897B500E3775D /* XCTest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Extension.swift"; sourceTree = "<group>"; };
 		18A36B172C076245005AE9C6 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistResponseMock.swift; sourceTree = "<group>"; };
 		18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsEndpoint.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				18A36B172C076245005AE9C6 /* MockURLProtocol.swift */,
 				18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */,
+				1875FE122C0897B500E3775D /* XCTest+Extension.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			files = (
 				18A36B1A2C0765AC005AE9C6 /* GistResponseMock.swift in Sources */,
 				18D6767E2C0668EC00C66EB5 /* NetworkServiceTests.swift in Sources */,
+				1875FE132C0897B500E3775D /* XCTest+Extension.swift in Sources */,
 				1875FE112C07C8DA00E3775D /* GistsRepositoryTests.swift in Sources */,
 				18A36B182C076245005AE9C6 /* MockURLProtocol.swift in Sources */,
 			);

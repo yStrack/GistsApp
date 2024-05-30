@@ -31,7 +31,7 @@ final class GistsRepositoryTests: XCTestCase {
     }
 
     func testSuccessGetGists() throws {
-        self.setupNetworkRequestHandler(statusCode: 200, data: gistResponseMockData)
+        self.setupMockNetworkRequestHandler(for: url, statusCode: 200, data: gistResponseMockData)
         
         repository.getGists(page: 0) { result in
             switch result {
@@ -58,7 +58,7 @@ final class GistsRepositoryTests: XCTestCase {
     }
     
     func testEmptyGists() throws {
-        self.setupNetworkRequestHandler(statusCode: 200, data: gistResponseMissingOwnerMockData)
+        self.setupMockNetworkRequestHandler(for: url, statusCode: 200, data: gistResponseMissingOwnerMockData)
         
         repository.getGists(page: 0) { result in
             switch result {
@@ -75,7 +75,7 @@ final class GistsRepositoryTests: XCTestCase {
     }
     
     func testFailToGetGists() throws {
-        self.setupNetworkRequestHandler(statusCode: 400)
+        self.setupMockNetworkRequestHandler(for: url, statusCode: 400)
         
         repository.getGists(page: 0) { result in
             switch result {
@@ -90,18 +90,6 @@ final class GistsRepositoryTests: XCTestCase {
                 
                 XCTAssertEqual(error, NetworkService.NetworkError.unexpectedStatusCode, "Expected get gists to fail.")
             }
-        }
-    }
-    
-    private func setupNetworkRequestHandler(statusCode: Int, data: Data? = nil) {
-        MockURLProtocol.requestHandler = { request in
-            guard
-                let response = HTTPURLResponse(url: self.url, statusCode: statusCode, httpVersion: nil, headerFields: nil)
-            else {
-                throw NetworkService.NetworkError.unknown
-            }
-            
-            return (response, data)
         }
     }
 }

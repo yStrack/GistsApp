@@ -31,18 +31,7 @@ final class NetworkServiceTests: XCTestCase {
 
     func testSuccessfulResponse() throws {
         // Setup desired test response.
-        MockURLProtocol.requestHandler = { [weak self] request in
-            guard let self else { throw NetworkService.NetworkError.unknown }
-            guard
-                let url = request.url,
-                url == self.url,
-                let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
-            else {
-                throw NetworkService.NetworkError.invalidEndpoint
-            }
-            
-            return (response, gistResponseMockData)
-        }
+        self.setupMockNetworkRequestHandler(for: url, statusCode: 200, data: gistResponseMockData)
         
         service.sendRequest(endpoint: endpoint, completion: { (result: Result<[GistResponse], Error>) in
             switch result {
@@ -70,16 +59,7 @@ final class NetworkServiceTests: XCTestCase {
     
     func testParsingFail() throws {
         // Setup desired test response.
-        MockURLProtocol.requestHandler = { [weak self] request in
-            guard let self else { throw NetworkService.NetworkError.unknown }
-            guard 
-                let response = HTTPURLResponse(url: self.url, statusCode: 200, httpVersion: nil, headerFields: nil)
-            else {
-                throw NetworkService.NetworkError.invalidEndpoint
-            }
-            
-            return (response, Data())
-        }
+        self.setupMockNetworkRequestHandler(for: url, statusCode: 200, data: Data())
         
         service.sendRequest(endpoint: endpoint) { (result: Result<[GistResponse], Error>) in
             switch result {
@@ -102,16 +82,7 @@ final class NetworkServiceTests: XCTestCase {
     
     func testFailureStatusCode() throws {
         // Setup desired test response.
-        MockURLProtocol.requestHandler = { [weak self] request in
-            guard let self else { throw NetworkService.NetworkError.unknown }
-            guard
-                let response = HTTPURLResponse(url: self.url, statusCode: 400, httpVersion: nil, headerFields: nil)
-            else {
-                throw NetworkService.NetworkError.invalidEndpoint
-            }
-            
-            return (response, nil)
-        }
+        self.setupMockNetworkRequestHandler(for: url, statusCode: 400)
         
         service.sendRequest(endpoint: endpoint) { (result: Result<[GistResponse], Error>) in
             switch result {
