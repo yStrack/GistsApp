@@ -24,6 +24,12 @@
 		1875FE112C07C8DA00E3775D /* GistsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE102C07C8DA00E3775D /* GistsRepositoryTests.swift */; };
 		1875FE132C0897B500E3775D /* XCTest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE122C0897B500E3775D /* XCTest+Extension.swift */; };
 		1875FE292C0CF7E400E3775D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1875FE282C0CF7E400E3775D /* Kingfisher */; };
+		1875FE1B2C0CED7800E3775D /* GistsListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE1A2C0CED7800E3775D /* GistsListFactory.swift */; };
+		1875FE1D2C0CED8900E3775D /* GistsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE1C2C0CED8900E3775D /* GistsListInteractor.swift */; };
+		1875FE1F2C0CED9600E3775D /* GistsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE1E2C0CED9600E3775D /* GistsListPresenter.swift */; };
+		1875FE212C0CED9F00E3775D /* GistsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE202C0CED9F00E3775D /* GistsListViewController.swift */; };
+		1875FE232C0CEDB700E3775D /* GistsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE222C0CEDB700E3775D /* GistsListRouter.swift */; };
+		1875FE262C0CF72800E3775D /* GistsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE252C0CF72800E3775D /* GistsListTableViewCell.swift */; };
 		18A36B182C076245005AE9C6 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B172C076245005AE9C6 /* MockURLProtocol.swift */; };
 		18A36B1A2C0765AC005AE9C6 /* GistResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */; };
 		18D676792C065BBA00C66EB5 /* GistsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */; };
@@ -69,6 +75,12 @@
 		1875FE0B2C07A63800E3775D /* GistsAPIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsAPIRepository.swift; sourceTree = "<group>"; };
 		1875FE102C07C8DA00E3775D /* GistsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsRepositoryTests.swift; sourceTree = "<group>"; };
 		1875FE122C0897B500E3775D /* XCTest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTest+Extension.swift"; sourceTree = "<group>"; };
+		1875FE1A2C0CED7800E3775D /* GistsListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListFactory.swift; sourceTree = "<group>"; };
+		1875FE1C2C0CED8900E3775D /* GistsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListInteractor.swift; sourceTree = "<group>"; };
+		1875FE1E2C0CED9600E3775D /* GistsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListPresenter.swift; sourceTree = "<group>"; };
+		1875FE202C0CED9F00E3775D /* GistsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListViewController.swift; sourceTree = "<group>"; };
+		1875FE222C0CEDB700E3775D /* GistsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListRouter.swift; sourceTree = "<group>"; };
+		1875FE252C0CF72800E3775D /* GistsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListTableViewCell.swift; sourceTree = "<group>"; };
 		18A36B172C076245005AE9C6 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistResponseMock.swift; sourceTree = "<group>"; };
 		18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsEndpoint.swift; sourceTree = "<group>"; };
@@ -127,6 +139,7 @@
 			children = (
 				1875FE002C07A0A600E3775D /* Domain */,
 				18519EDF2C0610F9004FE728 /* Network */,
+				1875FE182C0CC72500E3775D /* Presentation */,
 				18519EAE2C060E89004FE728 /* AppDelegate.swift */,
 				18519EB02C060E89004FE728 /* SceneDelegate.swift */,
 				18519EB22C060E89004FE728 /* ViewController.swift */,
@@ -217,6 +230,35 @@
 				1875FE102C07C8DA00E3775D /* GistsRepositoryTests.swift */,
 			);
 			path = DomainTests;
+			sourceTree = "<group>";
+		};
+		1875FE182C0CC72500E3775D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1875FE192C0CC73200E3775D /* GistsList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		1875FE192C0CC73200E3775D /* GistsList */ = {
+			isa = PBXGroup;
+			children = (
+				1875FE242C0CF6EE00E3775D /* Views */,
+				1875FE1A2C0CED7800E3775D /* GistsListFactory.swift */,
+				1875FE1C2C0CED8900E3775D /* GistsListInteractor.swift */,
+				1875FE1E2C0CED9600E3775D /* GistsListPresenter.swift */,
+				1875FE222C0CEDB700E3775D /* GistsListRouter.swift */,
+				1875FE202C0CED9F00E3775D /* GistsListViewController.swift */,
+			);
+			path = GistsList;
+			sourceTree = "<group>";
+		};
+		1875FE242C0CF6EE00E3775D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1875FE252C0CF72800E3775D /* GistsListTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		18A36B162C076237005AE9C6 /* Mock */ = {
@@ -373,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1875FE262C0CF72800E3775D /* GistsListTableViewCell.swift in Sources */,
 				1875FE082C07A2CF00E3775D /* Gist.swift in Sources */,
 				18519EE52C0620F5004FE728 /* Endpoint+Protocol.swift in Sources */,
 				18519EB32C060E89004FE728 /* ViewController.swift in Sources */,
@@ -380,11 +423,16 @@
 				18519EAF2C060E89004FE728 /* AppDelegate.swift in Sources */,
 				18519EB12C060E89004FE728 /* SceneDelegate.swift in Sources */,
 				18D676792C065BBA00C66EB5 /* GistsEndpoint.swift in Sources */,
+				1875FE1D2C0CED8900E3775D /* GistsListInteractor.swift in Sources */,
 				1875FE062C07A2C100E3775D /* User.swift in Sources */,
+				1875FE1F2C0CED9600E3775D /* GistsListPresenter.swift in Sources */,
 				1875FE042C07A24B00E3775D /* File.swift in Sources */,
 				18519EE22C061278004FE728 /* GistResponse.swift in Sources */,
+				1875FE1B2C0CED7800E3775D /* GistsListFactory.swift in Sources */,
+				1875FE212C0CED9F00E3775D /* GistsListViewController.swift in Sources */,
 				1875FE0A2C07A5A900E3775D /* GistsRepositoryInterface.swift in Sources */,
 				18D6767B2C065F0000C66EB5 /* NetworkService.swift in Sources */,
+				1875FE232C0CEDB700E3775D /* GistsListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
