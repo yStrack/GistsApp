@@ -48,7 +48,7 @@ final class GistsListPresenter: GistsListPresenterInput {
     }
     
     func didSelectedGist(at index: Int) {
-        router.routeToGistDetails()
+        router.routeToGistDetails(gists[index])
     }
     
     func retryButtonTap() {

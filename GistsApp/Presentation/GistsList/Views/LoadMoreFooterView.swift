@@ -13,7 +13,7 @@ protocol LoadMoreButtonDelegate {
 
 final class LoadMoreFooterView: UITableViewHeaderFooterView {
     
-    static let identifier: String = "LoadMoreFooterView"
+    public static let identifier: String = "LoadMoreFooterView"
     
     var delegate: LoadMoreButtonDelegate?
     

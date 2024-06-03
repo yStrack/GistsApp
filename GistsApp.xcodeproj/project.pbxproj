@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181F12232C0E121F00BE478B /* GistDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F12222C0E121F00BE478B /* GistDetailsViewController.swift */; };
+		181F12252C0E151B00BE478B /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F12242C0E151B00BE478B /* UserInfoTableViewCell.swift */; };
 		18519EAF2C060E89004FE728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EAE2C060E89004FE728 /* AppDelegate.swift */; };
 		18519EB12C060E89004FE728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EB02C060E89004FE728 /* SceneDelegate.swift */; };
 		18519EB32C060E89004FE728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EB22C060E89004FE728 /* ViewController.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181F12222C0E121F00BE478B /* GistDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistDetailsViewController.swift; sourceTree = "<group>"; };
+		181F12242C0E151B00BE478B /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		18519EAB2C060E89004FE728 /* GistsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18519EAE2C060E89004FE728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18519EB02C060E89004FE728 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181F12212C0E120900BE478B /* GistDetails */ = {
+			isa = PBXGroup;
+			children = (
+				181F12262C0E151E00BE478B /* Views */,
+				181F12222C0E121F00BE478B /* GistDetailsViewController.swift */,
+			);
+			path = GistDetails;
+			sourceTree = "<group>";
+		};
+		181F12262C0E151E00BE478B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				181F12242C0E151B00BE478B /* UserInfoTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		18519EA22C060E89004FE728 = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +261,7 @@
 		1875FE182C0CC72500E3775D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				181F12212C0E120900BE478B /* GistDetails */,
 				1875FE192C0CC73200E3775D /* GistsList */,
 			);
 			path = Presentation;
@@ -433,8 +455,10 @@
 				1875FE082C07A2CF00E3775D /* Gist.swift in Sources */,
 				18944C622C0D472600077E05 /* ErrorView.swift in Sources */,
 				18519EE52C0620F5004FE728 /* Endpoint+Protocol.swift in Sources */,
+				181F12252C0E151B00BE478B /* UserInfoTableViewCell.swift in Sources */,
 				18519EB32C060E89004FE728 /* ViewController.swift in Sources */,
 				1875FE0C2C07A63800E3775D /* GistsAPIRepository.swift in Sources */,
+				181F12232C0E121F00BE478B /* GistDetailsViewController.swift in Sources */,
 				18519EAF2C060E89004FE728 /* AppDelegate.swift in Sources */,
 				18519EB12C060E89004FE728 /* SceneDelegate.swift in Sources */,
 				18944C692C0DFEAF00077E05 /* LoadMoreFooterView.swift in Sources */,

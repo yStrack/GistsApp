@@ -10,15 +10,14 @@ import UIKit
 
 protocol GistsListRouterProtocol {
     var viewController: UIViewController? { get }
-    func routeToGistDetails()
+    func routeToGistDetails(_ gist: Gist)
 }
 
 final class GistsListRouter: GistsListRouterProtocol {
     weak var viewController: UIViewController?
     
-    func routeToGistDetails() {
-        let detailsVC = UIViewController()
-        detailsVC.view.backgroundColor = .systemGroupedBackground
+    func routeToGistDetails(_ gist: Gist) {
+        let detailsVC = GistDetailsViewController(gist: gist)
         viewController?.navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
