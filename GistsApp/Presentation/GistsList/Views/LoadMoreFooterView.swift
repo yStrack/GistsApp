@@ -30,16 +30,28 @@ final class LoadMoreFooterView: UITableViewHeaderFooterView {
         return button
     }()
     
+    private lazy var loadingIndicatorView: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(frame: .zero)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.hidesWhenStopped = true
+        indicator.style = .medium
+        indicator.color = .systemBackground
+        return indicator
+    }()
+    
     // MARK: Initializer
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         contentView.addSubview(button)
+        contentView.addSubview(loadingIndicatorView)
         NSLayoutConstraint.activate([
             button.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             button.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             button.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            
+            loadingIndicatorView.centerXAnchor.constraint(equalTo: button.centerXAnchor),
+            loadingIndicatorView.centerYAnchor.constraint(equalTo: button.centerYAnchor),
         ])
-        
     }
     
     required init?(coder: NSCoder) {
@@ -48,6 +60,13 @@ final class LoadMoreFooterView: UITableViewHeaderFooterView {
     
     // MARK: Action
     @objc private func didTapLoadMore() {
+        loadingIndicatorView.startAnimating()
+        button.setTitleColor(.clear, for: .normal)
         delegate?.didTapLoadMore()
+    }
+    
+    public func finishLoading() {
+        loadingIndicatorView.stopAnimating()
+        button.setTitleColor(.systemBackground, for: .normal)
     }
 }

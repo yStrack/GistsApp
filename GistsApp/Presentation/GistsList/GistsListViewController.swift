@@ -144,10 +144,15 @@ extension GistsListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        guard section == 0 else { return nil }
+        guard section == 0, tableView.numberOfRows(inSection: section) != 0 else { return nil }
         let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: LoadMoreFooterView.identifier) as? LoadMoreFooterView
         cell?.delegate = self
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
+        guard let header = view as? LoadMoreFooterView else { return }
+        header.finishLoading()
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
