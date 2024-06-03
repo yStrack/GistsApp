@@ -12,6 +12,7 @@ protocol GistsListPresenterInput {
     func getGist(at index: Int) -> Gist
     func loadMoreGists()
     func didSelectedGist(at index: Int)
+    func retryButtonTap()
 }
 
 protocol GistsListPresenterOutput {
@@ -52,6 +53,12 @@ final class GistsListPresenter: GistsListPresenterInput {
     
     func didSelectedGist(at index: Int) {
         router.routeToGistDetails()
+    }
+    
+    func retryButtonTap() {
+        output?.showLoading()
+        currentPage = 0
+        interactor.getGistsList(for: currentPage)
     }
 }
 

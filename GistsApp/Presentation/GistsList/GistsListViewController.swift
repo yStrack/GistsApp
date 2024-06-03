@@ -33,6 +33,14 @@ final class GistsListViewController: UIViewController {
         }
     }()
     
+    private lazy var errorView: ErrorView = {
+        let view = ErrorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.delegate = self
+        view.isHidden = true
+        return view
+    }()
+    
     // MARK: Views
     private lazy var loadingIndicatorView: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(frame: .zero)
@@ -64,6 +72,7 @@ final class GistsListViewController: UIViewController {
         presenter.viewDidLoad()
         view.addSubview(tableView)
         view.addSubview(loadingIndicatorView)
+        view.addSubview(errorView)
         setupConstraints()
     }
     
@@ -82,7 +91,12 @@ final class GistsListViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
             loadingIndicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loadingIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            loadingIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            errorView.topAnchor.constraint(equalTo: view.topAnchor),
+            errorView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
     }
 }
@@ -93,18 +107,27 @@ extension GistsListViewController: GistsListPresenterOutput {
         var snapshot = NSDiffableDataSourceSnapshot<Int, Gist.ID>()
         snapshot.appendSections([0])
         snapshot.appendItems(gists.map({ $0.id }), toSection: 0)
-        dataSource.apply(snapshot, animatingDifferences: true)
+        dataSource.apply(snapshot, animatingDifferences: false)
     }
     
     func showLoading() {
         DispatchQueue.main.async {
             self.loadingIndicatorView.startAnimating()
+            self.tableView.isScrollEnabled = false
+            self.errorView.isHidden = true
         }
     }
     
     func hideLoading(withError: Bool) {
         DispatchQueue.main.async {
             self.loadingIndicatorView.stopAnimating()
+            if withError {
+                self.tableView.isScrollEnabled = false
+                self.errorView.isHidden = false
+                return
+            }
+            self.tableView.isScrollEnabled = true
+            self.errorView.isHidden = true
         }
     }
 }
@@ -118,5 +141,12 @@ extension GistsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let cell = cell as? GistsListTableViewCell else { return }
         cell.avatarImageView.kf.cancelDownloadTask()
+    }
+}
+
+// MARK: ErrorViewDelegate
+extension GistsListViewController: ErrorViewDelegate {
+    func didTapRetryButton() {
+        presenter.retryButtonTap()
     }
 }
