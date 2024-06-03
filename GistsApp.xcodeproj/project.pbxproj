@@ -31,6 +31,7 @@
 		1875FE262C0CF72800E3775D /* GistsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE252C0CF72800E3775D /* GistsListTableViewCell.swift */; };
 		1875FE292C0CF7E400E3775D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1875FE282C0CF7E400E3775D /* Kingfisher */; };
 		18944C622C0D472600077E05 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944C612C0D472600077E05 /* ErrorView.swift */; };
+		18944C692C0DFEAF00077E05 /* LoadMoreFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944C682C0DFEAF00077E05 /* LoadMoreFooterView.swift */; };
 		18A36B182C076245005AE9C6 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B172C076245005AE9C6 /* MockURLProtocol.swift */; };
 		18A36B1A2C0765AC005AE9C6 /* GistResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */; };
 		18D676792C065BBA00C66EB5 /* GistsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */; };
@@ -83,6 +84,7 @@
 		1875FE222C0CEDB700E3775D /* GistsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListRouter.swift; sourceTree = "<group>"; };
 		1875FE252C0CF72800E3775D /* GistsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListTableViewCell.swift; sourceTree = "<group>"; };
 		18944C612C0D472600077E05 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		18944C682C0DFEAF00077E05 /* LoadMoreFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreFooterView.swift; sourceTree = "<group>"; };
 		18A36B172C076245005AE9C6 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		18A36B192C0765AC005AE9C6 /* GistResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistResponseMock.swift; sourceTree = "<group>"; };
 		18D676782C065BBA00C66EB5 /* GistsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsEndpoint.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				1875FE252C0CF72800E3775D /* GistsListTableViewCell.swift */,
+				18944C682C0DFEAF00077E05 /* LoadMoreFooterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				1875FE0C2C07A63800E3775D /* GistsAPIRepository.swift in Sources */,
 				18519EAF2C060E89004FE728 /* AppDelegate.swift in Sources */,
 				18519EB12C060E89004FE728 /* SceneDelegate.swift in Sources */,
+				18944C692C0DFEAF00077E05 /* LoadMoreFooterView.swift in Sources */,
 				18D676792C065BBA00C66EB5 /* GistsEndpoint.swift in Sources */,
 				1875FE1D2C0CED8900E3775D /* GistsListInteractor.swift in Sources */,
 				1875FE062C07A2C100E3775D /* User.swift in Sources */,

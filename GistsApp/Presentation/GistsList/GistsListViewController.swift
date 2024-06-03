@@ -14,6 +14,7 @@ final class GistsListViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(GistsListTableViewCell.self, forCellReuseIdentifier: GistsListTableViewCell.identifier)
+        tableView.register(LoadMoreFooterView.self, forHeaderFooterViewReuseIdentifier: LoadMoreFooterView.identifier)
         tableView.delegate = self
         return tableView
     }()
@@ -33,14 +34,6 @@ final class GistsListViewController: UIViewController {
         }
     }()
     
-    private lazy var errorView: ErrorView = {
-        let view = ErrorView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.delegate = self
-        view.isHidden = true
-        return view
-    }()
-    
     // MARK: Views
     private lazy var loadingIndicatorView: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(frame: .zero)
@@ -50,6 +43,14 @@ final class GistsListViewController: UIViewController {
         indicator.startAnimating()
         indicator.color = .systemBlue
         return indicator
+    }()
+    
+    private lazy var errorView: ErrorView = {
+        let view = ErrorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.delegate = self
+        view.isHidden = true
+        return view
     }()
     
     // MARK: Dependencies
@@ -144,6 +145,13 @@ extension GistsListViewController: UITableViewDelegate {
         presenter.didSelectedGist(at: indexPath.row)
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard section == 0 else { return nil }
+        let cell = tableView.dequeueReusableHeaderFooterView(withIdentifier: LoadMoreFooterView.identifier) as? LoadMoreFooterView
+        cell?.delegate = self
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let cell = cell as? GistsListTableViewCell else { return }
         cell.avatarImageView.kf.cancelDownloadTask()
@@ -154,5 +162,12 @@ extension GistsListViewController: UITableViewDelegate {
 extension GistsListViewController: ErrorViewDelegate {
     func didTapRetryButton() {
         presenter.retryButtonTap()
+    }
+}
+
+// MARK: LoadMoreButtonDelegate
+extension GistsListViewController: LoadMoreButtonDelegate {
+    func didTapLoadMore() {
+        presenter.loadMoreGists()
     }
 }
