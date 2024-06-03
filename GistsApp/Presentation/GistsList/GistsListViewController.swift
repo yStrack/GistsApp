@@ -85,31 +85,27 @@ final class GistsListViewController: UIViewController {
             loadingIndicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
-    
-    // MARK: Helpers
-    private func hideLoading() {
-        DispatchQueue.main.async {
-            self.loadingIndicatorView.stopAnimating()
-        }
-    }
 }
 
 // MARK: Presenter output implementation
 extension GistsListViewController: GistsListPresenterOutput {
     func updateGistsList(_ gists: [Gist]) {
-        hideLoading()
         var snapshot = NSDiffableDataSourceSnapshot<Int, Gist.ID>()
         snapshot.appendSections([0])
         snapshot.appendItems(gists.map({ $0.id }), toSection: 0)
         dataSource.apply(snapshot, animatingDifferences: true)
     }
     
-    func showError() {
-        hideLoading()
+    func showLoading() {
+        DispatchQueue.main.async {
+            self.loadingIndicatorView.startAnimating()
+        }
     }
     
-    func hideError() {
-        
+    func hideLoading(withError: Bool) {
+        DispatchQueue.main.async {
+            self.loadingIndicatorView.stopAnimating()
+        }
     }
 }
 

@@ -16,8 +16,8 @@ protocol GistsListPresenterInput {
 
 protocol GistsListPresenterOutput {
     func updateGistsList(_ gists: [Gist])
-    func showError()
-    func hideError()
+    func showLoading()
+    func hideLoading(withError: Bool)
 }
 
 final class GistsListPresenter: GistsListPresenterInput {
@@ -59,11 +59,11 @@ final class GistsListPresenter: GistsListPresenterInput {
 extension GistsListPresenter: GistsListInteractorOutput {
     func gistsListFound(_ gists: [Gist]) {
         self.gists.append(contentsOf: gists)
-        output?.hideError()
+        output?.hideLoading(withError: false)
         output?.updateGistsList(gists)
     }
     
     func gistsListFailed(with error: any Error) {
-        output?.showError()
+        output?.hideLoading(withError: true)
     }
 }
