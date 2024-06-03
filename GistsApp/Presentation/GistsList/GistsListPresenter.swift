@@ -9,7 +9,6 @@ import Foundation
 
 protocol GistsListPresenterInput {
     func viewDidLoad()
-    func getGist(at index: Int) -> Gist
     func loadMoreGists()
     func didSelectedGist(at index: Int)
     func retryButtonTap()
@@ -41,10 +40,6 @@ final class GistsListPresenter: GistsListPresenterInput {
     // MARK: Input functions
     func viewDidLoad() {
         interactor.getGistsList(for: currentPage)
-    }
-    
-    func getGist(at index: Int) -> Gist {
-        return gists[index]
     }
     
     func loadMoreGists() {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Gist: Identifiable {
+struct Gist: Identifiable, Hashable {
     let id: String
     let createdAt: Date
     let comments: Int

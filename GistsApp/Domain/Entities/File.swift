@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct File {
+struct File: Hashable {
     let name: String
 }
 

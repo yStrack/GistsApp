@@ -19,17 +19,15 @@ final class GistsListViewController: UIViewController {
         return tableView
     }()
     
-    private lazy var dataSource: UITableViewDiffableDataSource<Int, Gist.ID> = {
-        return UITableViewDiffableDataSource<Int, Gist.ID>(tableView: tableView) { tableView, indexPath, itemIdentifier in
-            guard 
+    private lazy var dataSource: UITableViewDiffableDataSource<Int, Gist> = {
+        return UITableViewDiffableDataSource<Int, Gist>(tableView: tableView) { tableView, indexPath, item in
+            guard
                 let cell = tableView.dequeueReusableCell(withIdentifier: GistsListTableViewCell.identifier, for: indexPath) as? GistsListTableViewCell
             else {
                 return nil
             }
             
-            let gist = self.presenter.getGist(at: indexPath.row)
-            cell.setup(with: gist)
-            
+            cell.setup(with: item)
             return cell
         }
     }()
@@ -105,15 +103,15 @@ final class GistsListViewController: UIViewController {
 // MARK: Presenter output implementation
 extension GistsListViewController: GistsListPresenterOutput {
     func didFoundGistsList(_ gists: [Gist]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Int, Gist.ID>()
+        var snapshot = NSDiffableDataSourceSnapshot<Int, Gist>()
         snapshot.appendSections([0])
-        snapshot.appendItems(gists.map({ $0.id }), toSection: 0)
+        snapshot.appendItems(gists, toSection: 0)
         dataSource.apply(snapshot, animatingDifferences: false)
     }
     
     func updateGistsList(_ newGists: [Gist]) {
         var snapshot = dataSource.snapshot()
-        snapshot.appendItems(newGists.map({ $0.id }), toSection: 0)
+        snapshot.appendItems(newGists, toSection: 0)
         dataSource.apply(snapshot)
     }
     
