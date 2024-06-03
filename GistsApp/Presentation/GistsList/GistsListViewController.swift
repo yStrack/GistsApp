@@ -103,11 +103,17 @@ final class GistsListViewController: UIViewController {
 
 // MARK: Presenter output implementation
 extension GistsListViewController: GistsListPresenterOutput {
-    func updateGistsList(_ gists: [Gist]) {
+    func didFoundGistsList(_ gists: [Gist]) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, Gist.ID>()
         snapshot.appendSections([0])
         snapshot.appendItems(gists.map({ $0.id }), toSection: 0)
         dataSource.apply(snapshot, animatingDifferences: false)
+    }
+    
+    func updateGistsList(_ newGists: [Gist]) {
+        var snapshot = dataSource.snapshot()
+        snapshot.appendItems(newGists.map({ $0.id }), toSection: 0)
+        dataSource.apply(snapshot)
     }
     
     func showLoading() {

@@ -16,14 +16,15 @@ protocol GistsListPresenterInput {
 }
 
 protocol GistsListPresenterOutput {
-    func updateGistsList(_ gists: [Gist])
+    func didFoundGistsList(_ gists: [Gist])
+    func updateGistsList(_ newGists: [Gist])
     func showLoading()
     func hideLoading(withError: Bool)
 }
 
 final class GistsListPresenter: GistsListPresenterInput {
     
-    private var currentPage: Int = 0
+    private var currentPage: Int = 1
     private var gists: [Gist] = []
     
     // MARK: Dependencies
@@ -57,7 +58,7 @@ final class GistsListPresenter: GistsListPresenterInput {
     
     func retryButtonTap() {
         output?.showLoading()
-        currentPage = 0
+        currentPage = 1
         interactor.getGistsList(for: currentPage)
     }
 }
@@ -65,12 +66,23 @@ final class GistsListPresenter: GistsListPresenterInput {
 // MARK: Interactor output implmentation
 extension GistsListPresenter: GistsListInteractorOutput {
     func gistsListFound(_ gists: [Gist]) {
+        // Append new content.
         self.gists.append(contentsOf: gists)
-        output?.hideLoading(withError: false)
+        // Fresh gist list.
+        if currentPage == 1 {
+            output?.hideLoading(withError: gists.isEmpty ? true : false)
+            output?.didFoundGistsList(self.gists)
+            return
+        }
+        // Loaded more gists.
         output?.updateGistsList(gists)
     }
     
     func gistsListFailed(with error: any Error) {
+        // Only show error on fresh content.
+        guard currentPage == 1 else {
+            return
+        }
         output?.hideLoading(withError: true)
     }
 }
