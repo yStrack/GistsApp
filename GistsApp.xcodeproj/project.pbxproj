@@ -32,6 +32,8 @@
 		1875FE232C0CEDB700E3775D /* GistsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE222C0CEDB700E3775D /* GistsListRouter.swift */; };
 		1875FE262C0CF72800E3775D /* GistsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1875FE252C0CF72800E3775D /* GistsListTableViewCell.swift */; };
 		1875FE292C0CF7E400E3775D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1875FE282C0CF7E400E3775D /* Kingfisher */; };
+		187C65CE2C0E692400F003F1 /* GistsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C65CD2C0E692400F003F1 /* GistsListInteractorTests.swift */; };
+		187C65D02C0E8DB600F003F1 /* GistsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C65CF2C0E8DB600F003F1 /* GistsListPresenterTests.swift */; };
 		18944C622C0D472600077E05 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944C612C0D472600077E05 /* ErrorView.swift */; };
 		18944C692C0DFEAF00077E05 /* LoadMoreFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944C682C0DFEAF00077E05 /* LoadMoreFooterView.swift */; };
 		18A36B182C076245005AE9C6 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B172C076245005AE9C6 /* MockURLProtocol.swift */; };
@@ -87,6 +89,8 @@
 		1875FE202C0CED9F00E3775D /* GistsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListViewController.swift; sourceTree = "<group>"; };
 		1875FE222C0CEDB700E3775D /* GistsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListRouter.swift; sourceTree = "<group>"; };
 		1875FE252C0CF72800E3775D /* GistsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListTableViewCell.swift; sourceTree = "<group>"; };
+		187C65CD2C0E692400F003F1 /* GistsListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListInteractorTests.swift; sourceTree = "<group>"; };
+		187C65CF2C0E8DB600F003F1 /* GistsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GistsListPresenterTests.swift; sourceTree = "<group>"; };
 		18944C612C0D472600077E05 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		18944C682C0DFEAF00077E05 /* LoadMoreFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreFooterView.swift; sourceTree = "<group>"; };
 		18A36B172C076245005AE9C6 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		18519EC42C060E8A004FE728 /* GistsAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				187C65CB2C0E68F300F003F1 /* PresentationTests */,
 				1875FE0D2C07C8AD00E3775D /* DomainTests */,
 				18A36B162C076237005AE9C6 /* Mock */,
 				18D6767C2C0668C300C66EB5 /* NetworkTests */,
@@ -287,6 +292,23 @@
 				18944C682C0DFEAF00077E05 /* LoadMoreFooterView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		187C65CB2C0E68F300F003F1 /* PresentationTests */ = {
+			isa = PBXGroup;
+			children = (
+				187C65CC2C0E68FF00F003F1 /* GistsListTests */,
+			);
+			path = PresentationTests;
+			sourceTree = "<group>";
+		};
+		187C65CC2C0E68FF00F003F1 /* GistsListTests */ = {
+			isa = PBXGroup;
+			children = (
+				187C65CD2C0E692400F003F1 /* GistsListInteractorTests.swift */,
+				187C65CF2C0E8DB600F003F1 /* GistsListPresenterTests.swift */,
+			);
+			path = GistsListTests;
 			sourceTree = "<group>";
 		};
 		18944C602C0D470300077E05 /* UIComponents */ = {
@@ -480,7 +502,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187C65D02C0E8DB600F003F1 /* GistsListPresenterTests.swift in Sources */,
 				18A36B1A2C0765AC005AE9C6 /* GistResponseMock.swift in Sources */,
+				187C65CE2C0E692400F003F1 /* GistsListInteractorTests.swift in Sources */,
 				18D6767E2C0668EC00C66EB5 /* NetworkServiceTests.swift in Sources */,
 				1875FE132C0897B500E3775D /* XCTest+Extension.swift in Sources */,
 				1875FE112C07C8DA00E3775D /* GistsRepositoryTests.swift in Sources */,
