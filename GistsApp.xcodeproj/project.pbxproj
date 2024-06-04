@@ -11,7 +11,6 @@
 		181F12252C0E151B00BE478B /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F12242C0E151B00BE478B /* UserInfoTableViewCell.swift */; };
 		18519EAF2C060E89004FE728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EAE2C060E89004FE728 /* AppDelegate.swift */; };
 		18519EB12C060E89004FE728 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EB02C060E89004FE728 /* SceneDelegate.swift */; };
-		18519EB32C060E89004FE728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519EB22C060E89004FE728 /* ViewController.swift */; };
 		18519EB82C060E8A004FE728 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18519EB72C060E8A004FE728 /* Assets.xcassets */; };
 		18519EBB2C060E8A004FE728 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 18519EBA2C060E8A004FE728 /* Base */; };
 		18519ED02C060E8A004FE728 /* GistsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18519ECF2C060E8A004FE728 /* GistsAppUITests.swift */; };
@@ -66,7 +65,6 @@
 		18519EAB2C060E89004FE728 /* GistsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GistsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18519EAE2C060E89004FE728 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18519EB02C060E89004FE728 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18519EB22C060E89004FE728 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18519EB72C060E8A004FE728 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18519EBA2C060E8A004FE728 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18519EBC2C060E8A004FE728 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,16 +164,12 @@
 		18519EAD2C060E89004FE728 /* GistsApp */ = {
 			isa = PBXGroup;
 			children = (
-				18944C602C0D470300077E05 /* UIComponents */,
+				187C65D12C0E97E900F003F1 /* Application */,
 				1875FE002C07A0A600E3775D /* Domain */,
 				18519EDF2C0610F9004FE728 /* Network */,
 				1875FE182C0CC72500E3775D /* Presentation */,
-				18519EAE2C060E89004FE728 /* AppDelegate.swift */,
-				18519EB02C060E89004FE728 /* SceneDelegate.swift */,
-				18519EB22C060E89004FE728 /* ViewController.swift */,
-				18519EB72C060E8A004FE728 /* Assets.xcassets */,
-				18519EB92C060E8A004FE728 /* LaunchScreen.storyboard */,
-				18519EBC2C060E8A004FE728 /* Info.plist */,
+				187C65D22C0E98D800F003F1 /* Resources */,
+				18944C602C0D470300077E05 /* UIComponents */,
 			);
 			path = GistsApp;
 			sourceTree = "<group>";
@@ -309,6 +303,25 @@
 				187C65CF2C0E8DB600F003F1 /* GistsListPresenterTests.swift */,
 			);
 			path = GistsListTests;
+			sourceTree = "<group>";
+		};
+		187C65D12C0E97E900F003F1 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				18519EAE2C060E89004FE728 /* AppDelegate.swift */,
+				18519EB02C060E89004FE728 /* SceneDelegate.swift */,
+				18519EBC2C060E8A004FE728 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		187C65D22C0E98D800F003F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18519EB72C060E8A004FE728 /* Assets.xcassets */,
+				18519EB92C060E8A004FE728 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		18944C602C0D470300077E05 /* UIComponents */ = {
@@ -478,7 +491,6 @@
 				18944C622C0D472600077E05 /* ErrorView.swift in Sources */,
 				18519EE52C0620F5004FE728 /* Endpoint+Protocol.swift in Sources */,
 				181F12252C0E151B00BE478B /* UserInfoTableViewCell.swift in Sources */,
-				18519EB32C060E89004FE728 /* ViewController.swift in Sources */,
 				1875FE0C2C07A63800E3775D /* GistsAPIRepository.swift in Sources */,
 				181F12232C0E121F00BE478B /* GistDetailsViewController.swift in Sources */,
 				18519EAF2C060E89004FE728 /* AppDelegate.swift in Sources */,
@@ -676,7 +688,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FYZHV75N6Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GistsApp/Info.plist;
+				INFOPLIST_FILE = GistsApp/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -708,7 +720,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FYZHV75N6Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = GistsApp/Info.plist;
+				INFOPLIST_FILE = GistsApp/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
