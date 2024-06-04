@@ -106,13 +106,17 @@ extension GistsListViewController: GistsListPresenterOutput {
         var snapshot = NSDiffableDataSourceSnapshot<Int, Gist>()
         snapshot.appendSections([0])
         snapshot.appendItems(gists, toSection: 0)
-        dataSource.apply(snapshot, animatingDifferences: false)
+        DispatchQueue.main.async {
+            self.dataSource.apply(snapshot, animatingDifferences: false)
+        }
     }
     
     func updateGistsList(_ newGists: [Gist]) {
         var snapshot = dataSource.snapshot()
         snapshot.appendItems(newGists, toSection: 0)
-        dataSource.apply(snapshot)
+        DispatchQueue.main.async {
+            self.dataSource.apply(snapshot)
+        }
     }
     
     func showLoading() {
